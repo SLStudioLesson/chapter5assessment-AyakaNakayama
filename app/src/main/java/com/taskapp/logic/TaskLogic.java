@@ -119,7 +119,7 @@ public class TaskLogic {
         }
 
         // 引数のstatusとタスクインスタンスのstatusが等しいときAppException
-        if (status == task.getStatus()) {
+        if ((status - task.getStatus()) != 1) {
             throw new AppException("ステータスは、前のステータスより1つ先のもののみを選択してください");
         }
 
